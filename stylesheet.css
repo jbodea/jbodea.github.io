@@ -183,96 +183,349 @@ span.highlight {
   margin-top: 2px;
 }
 
-.paper-badges {
-  margin: 4px 0 6px 0;
+/* ── Publications section (ahalgh-style) ────────────────── */
+.publications-section {
+  width: 100%;
+  max-width: 1000px;
+  margin: 24px auto 32px;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.section-divider {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  margin: 16px 0 24px;
+}
+
+.card-list {
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+  flex-direction: column;
+  gap: 0;
 }
 
-.paper-tag {
-  display: inline-block;
-  padding: 2px 8px;
-  font-size: 11px;
-  font-weight: 700;
-  color: #1772d0;
-  background: #eaf3fb;
-  border: 1px solid #cfe2f3;
-  border-radius: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
-}
-
-.paper-tag.review {
-  color: #b15e00;
-  background: #fff3e0;
-  border-color: #ffd9a8;
-}
-
-.tile-actions {
-  margin: 8px 0 4px 0;
+/* ── Paper tiles ──────────────────────────────────────────── */
+.paper-tile {
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.tile-action-btn {
-  display: inline-block;
-  padding: 4px 10px;
-  font-size: 12px;
-  font-weight: 700;
-  color: #1772d0;
-  background: #fff;
-  border: 1px solid #cfe2f3;
-  border-radius: 4px;
-  cursor: pointer;
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
-}
-
-.tile-action-btn:hover {
-  color: #f09228;
-  border-color: #f09228;
+  gap: 24px;
+  align-items: center;
+  padding: 24px 28px;
+  margin: 0 0 20px;
+  background: #f6f7f9;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.04);
   text-decoration: none;
+  color: #333;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-.tile-bibtex-block {
-  display: none;
-  margin-top: 8px;
-  position: relative;
+a.paper-tile { cursor: pointer; }
+a.paper-tile:hover { text-decoration: none; color: #333; }
+.paper-tile:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06), 0 8px 20px rgba(0, 0, 0, 0.06);
 }
 
-.tile-bibtex-block.is-open {
+.paper-tile-image {
+  flex-shrink: 0;
+  width: 300px;
+  height: 220px;
+  padding: 10px 12px;
+  box-sizing: border-box;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.paper-tile-image::-webkit-scrollbar { display: none; }
+
+.paper-tile-image img {
+  height: 100%;
+  width: auto;
+  max-width: none;
   display: block;
 }
 
-.tile-bibtex-block pre {
-  background: #f6f8fa;
-  border: 1px solid #e1e4e8;
-  border-radius: 4px;
-  padding: 10px 12px;
+.paper-tile-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.paper-tile-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.paper-tile-tag {
+  display: inline-block;
   font-size: 12px;
-  line-height: 1.4;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  padding: 6px 11px;
+  border: 1px solid rgba(0, 0, 0, 0.55);
+  border-radius: 6px;
+  color: rgba(0, 0, 0, 0.85);
+  background: #ffffff;
+  white-space: nowrap;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+}
+
+.paper-tile-highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 6px 11px;
+  border-radius: 6px;
+  border: 1px solid #e0a800;
+  background: #fff8e1;
+  color: #8a6100;
+  white-space: nowrap;
+}
+
+.paper-tile-highlight i {
+  font-size: 12px;
+  color: #8a6100;
+}
+
+.paper-tile-title {
+  display: block;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.3;
+  margin-bottom: 10px;
+  color: rgba(0, 0, 0, 0.88);
+  text-decoration: none;
+}
+
+.paper-tile-title:hover,
+.paper-tile:hover .paper-tile-title {
+  color: #1772d0;
+  text-decoration: none;
+}
+
+.paper-tile-summary {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #444;
+  margin: 0;
+}
+
+.paper-tile-authors {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #444;
+  margin: 8px 0 0;
+}
+
+@media screen and (max-width: 700px) {
+  .paper-tile { flex-direction: column; gap: 12px; }
+  .paper-tile-image { width: 100%; height: 180px; }
+}
+
+/* ── Shared tile actions ─────────────────────────────────── */
+.tile-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tile-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #ffffff;
+  color: rgba(0, 0, 0, 0.78);
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.tile-action-btn:hover {
+  border-color: rgba(0, 0, 0, 0.3);
+  color: #1772d0;
+  background: #ffffff;
+  text-decoration: none;
+}
+
+.tile-action-btn i { font-size: 12px; }
+
+.tile-bibtex-block {
+  display: none;
+  position: relative;
+  margin-top: 10px;
+  background: #f6f8fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+.tile-bibtex-block.is-open { display: block; }
+
+.tile-bibtex-block pre {
+  margin: 0;
+  padding: 12px 14px;
+  padding-right: 70px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.45;
   overflow-x: auto;
   white-space: pre;
-  margin: 0;
+  color: #333;
 }
 
 .tile-copy-btn {
   position: absolute;
-  top: 6px;
-  right: 6px;
-  padding: 2px 8px;
+  top: 8px;
+  right: 8px;
   font-size: 11px;
-  font-weight: 700;
-  color: #1772d0;
-  background: #fff;
-  border: 1px solid #cfe2f3;
+  line-height: 1;
+  padding: 4px 9px;
   border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  background: #ffffff;
+  color: #444;
   cursor: pointer;
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-family: inherit;
+  transition: border-color 0.15s ease, color 0.15s ease;
 }
 
 .tile-copy-btn:hover {
-  color: #f09228;
-  border-color: #f09228;
+  border-color: #1772d0;
+  color: #1772d0;
+}
+
+/* ── Per-paper page ──────────────────────────────────────── */
+.paper-page {
+  padding: 28px 24px 64px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.paper-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #666;
+  font-size: 14px;
+  text-decoration: none;
+  margin-bottom: 28px;
+  transition: color 0.15s ease;
+}
+
+.paper-back-link:hover {
+  color: #1772d0;
+  text-decoration: none;
+}
+
+.paper-page-title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: rgba(0, 0, 0, 0.9);
+  letter-spacing: -0.015em;
+  margin: 0 0 16px;
+}
+
+.paper-page-authors {
+  font-size: 16px;
+  line-height: 1.55;
+  color: #333;
+  margin: 0 0 6px;
+}
+
+.paper-page-venue {
+  font-size: 15px;
+  color: #666;
+  margin: 0 0 20px;
+}
+
+.paper-page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.paper-page-image {
+  margin: 28px 0 32px;
+  padding: 20px 24px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: #ffffff;
+}
+
+.paper-page-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.paper-page-heading {
+  font-size: 22px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.88);
+  margin: 32px 0 14px;
+  letter-spacing: -0.005em;
+}
+
+.paper-page-abstract {
+  font-size: 16px;
+  line-height: 1.65;
+  color: #333;
+  margin: 0;
+}
+
+.paper-page-bibtex {
+  position: relative;
+  background: #f6f8fa;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+}
+
+.paper-page-bibtex pre {
+  margin: 0;
+  padding: 16px 18px;
+  padding-right: 80px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.55;
+  overflow-x: auto;
+  white-space: pre;
+  color: #333;
+}
+
+/* ── Scroll animations ──────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-on-scroll { opacity: 0; }
+.animate-on-scroll.is-visible { animation: fadeInUp 0.5s ease forwards; }
+.animate-on-scroll.stagger-1.is-visible { animation-delay: 0.05s; }
+.animate-on-scroll.stagger-2.is-visible { animation-delay: 0.10s; }
+.animate-on-scroll.stagger-3.is-visible { animation-delay: 0.15s; }
+.animate-on-scroll.stagger-4.is-visible { animation-delay: 0.20s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll { opacity: 1; }
+  .animate-on-scroll.is-visible { animation: none; }
 }
