@@ -55,8 +55,46 @@
                 <li><b>September 2020</b>: I began my Masters at MIT in EECS!
 
             </ul> -->
-        <h2>Preprints</h2>
+        <h2>Publications</h2>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <img src="images/unipo.jpg" alt="unipo" style="border-style: none" width="200">
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <div class="paper-badges">
+                <span class="paper-tag">Preprint'26</span>
+                <span class="paper-tag review">Under Review</span>
+              </div>
+              <papertitle>UNIPO: Unified Interactive Visual Explanation for RL Fine-Tuning Policy Optimization</papertitle>
+              <br>
+              <!-- <a href="https://aereeeee.github.io/" target="_blank">Aeree Cho</a> -->Aeree Cho,
+              <!-- <a href="https://ahalgh.github.io/" target="_blank">Alexander D. Greenhalgh</a> -->Alexander D. Greenhalgh,
+              <strong>Jonathan Bodea</strong>,
+              <!-- <a href="https://anthonypengjr.com/" target="_blank">Anthony Peng</a> -->Anthony Peng,
+              <!-- <a href="https://faculty.cc.gatech.edu/~dchau/" target="_blank">Duen Horng (Polo) Chau</a> -->Duen Horng (Polo) Chau.
+              <br>
+              <div class="tile-actions">
+                <a class="tile-action-btn" href="https://arxiv.org/pdf/2605.11549" target="_blank">PDF</a>
+                <a class="tile-action-btn" href="https://github.com/poloclub/unipo" target="_blank">Code</a>
+                <a class="tile-action-btn" href="https://poloclub.github.io/unipo/" target="_blank">Site</a>
+                <button type="button" class="tile-action-btn" onclick="toggleBibtex('unipo')">BibTeX</button>
+              </div>
+              <div class="tile-bibtex-block" id="bibtex-unipo">
+                <button type="button" class="tile-copy-btn" onclick="copyBibtex('unipo')">Copy</button>
+<pre id="bibtex-text-unipo">@misc{cho2026unipounifiedinteractivevisual,
+  title         = {UNIPO: Unified Interactive Visual Explanation for RL Fine-Tuning Policy Optimization},
+  author        = {Aeree Cho and Alexander D. Greenhalgh and Jonathan Bodea and Anthony Peng and Duen Horng (Polo) Chau},
+  year          = {2026},
+  eprint        = {2605.11549},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.HC},
+  url           = {https://arxiv.org/abs/2605.11549}
+}</pre>
+              </div>
+              <p>Reinforcement learning has emerged as a dominant technique for fine-tuning the behavior of large language models, with policy optimization (PO) algorithms such as GRPO, DAPO, and Dr. GRPO emerging in rapid succession to advance state-of-the-art reasoning and alignment performance. However, the modular differences between these algorithms, including targeted improvements to clipping, advantage estimation, and reward aggregation, are introduced across separate papers with inconsistent notation, making them difficult to compare and intimidating to the non-expert community. We present UNIPO, the first interactive visualization tool that exposes the token-level training dynamics of RL fine-tuning algorithms through a unified design. UNIPO connects three complementary views &mdash; a high-level training overview, a step-level prompt and response inspector, and a side-by-side algorithm comparison &mdash; allowing learners to observe how individual design decisions propagate through training. Through two usage scenarios, we demonstrate how UNIPO supports both classroom instruction for non-experts and algorithm selection for AI practitioners. Our tool is open-source and publicly available at <a href="https://poloclub.github.io/unipo/" target="_blank">poloclub.github.io/unipo</a>.</p>
+            </td>
+          </tr>
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
               <img src="images/dialogue.png" alt="lmrl_gym" style="border-style: none" width="200">
@@ -73,12 +111,26 @@
             </td>
           </tr>
         </tbody></table>
+        <script>
+          function toggleBibtex(id) {
+            var el = document.getElementById('bibtex-' + id);
+            if (el) el.classList.toggle('is-open');
+          }
+          function copyBibtex(id) {
+            var pre = document.getElementById('bibtex-text-' + id);
+            if (!pre) return;
+            navigator.clipboard.writeText(pre.innerText).then(function() {
+              var btn = pre.previousElementSibling;
+              if (!btn) return;
+              var orig = btn.innerText;
+              btn.innerText = 'Copied!';
+              setTimeout(function() { btn.innerText = orig; }, 1500);
+            });
+          }
+        </script>
         <h2>Upcoming</h2>
         <ul>
           <li>Publishing a paper on LLM persuasion and deception (heavily expanded from the preprint above).</li>
-          <li>Publishing a visualization research project with <a href="https://faculty.cc.gatech.edu/~dchau/" target="_blank">Georgia Tech's Polo Chau</a>.</li>
-          <li>Starting the <a href="https://gtri.gatech.edu/" target="_blank">Georgia Tech Research Institute</a> summer program.</li>
-          <li>Speaking at an AI Collective event.</li>
         </ul>
         <!-- <h2>Teaching</h2>
 

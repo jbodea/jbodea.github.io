@@ -182,3 +182,97 @@ span.highlight {
   color: #444;
   margin-top: 2px;
 }
+
+.paper-badges {
+  margin: 4px 0 6px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.paper-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #1772d0;
+  background: #eaf3fb;
+  border: 1px solid #cfe2f3;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.paper-tag.review {
+  color: #b15e00;
+  background: #fff3e0;
+  border-color: #ffd9a8;
+}
+
+.tile-actions {
+  margin: 8px 0 4px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tile-action-btn {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1772d0;
+  background: #fff;
+  border: 1px solid #cfe2f3;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+}
+
+.tile-action-btn:hover {
+  color: #f09228;
+  border-color: #f09228;
+  text-decoration: none;
+}
+
+.tile-bibtex-block {
+  display: none;
+  margin-top: 8px;
+  position: relative;
+}
+
+.tile-bibtex-block.is-open {
+  display: block;
+}
+
+.tile-bibtex-block pre {
+  background: #f6f8fa;
+  border: 1px solid #e1e4e8;
+  border-radius: 4px;
+  padding: 10px 12px;
+  font-size: 12px;
+  line-height: 1.4;
+  overflow-x: auto;
+  white-space: pre;
+  margin: 0;
+}
+
+.tile-copy-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #1772d0;
+  background: #fff;
+  border: 1px solid #cfe2f3;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+}
+
+.tile-copy-btn:hover {
+  color: #f09228;
+  border-color: #f09228;
+}
