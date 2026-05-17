@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://jbodea.github.io/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://jbodea.github.io/papers/unipo/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jbodea.github.io/papers/turning-the-tables/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jbodea.github.io/mipnerf/</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://jbodea.github.io/mipnerf360/</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://jbodea.github.io/zipnerf/</loc>
+    <priority>0.6</priority>
+  </url>
+</urlset>
