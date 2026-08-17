@@ -214,6 +214,7 @@ span.highlight {
 
 /* ── Paper tiles ──────────────────────────────────────────── */
 .paper-tile {
+  position: relative;
   display: flex;
   gap: 24px;
   align-items: center;
@@ -234,6 +235,8 @@ a.paper-tile:hover { text-decoration: none; color: #333; }
 }
 
 .paper-tile-image {
+  position: relative;
+  z-index: 1;
   flex-shrink: 0;
   width: 300px;
   height: 220px;
@@ -305,6 +308,16 @@ a.paper-tile:hover { text-decoration: none; color: #333; }
   color: #8a6100;
 }
 
+.paper-tile-highlight-accepted {
+  border-color: #2e7d32;
+  background: #e8f5e9;
+  color: #1b5e20;
+}
+
+.paper-tile-highlight-accepted i {
+  color: #2e7d32;
+}
+
 .paper-tile-title {
   display: block;
   font-weight: 700;
@@ -321,6 +334,14 @@ a.paper-tile:hover { text-decoration: none; color: #333; }
   text-decoration: none;
 }
 
+/* Stretch the title link over the whole tile so the card stays clickable */
+a.paper-tile-title::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+}
+
 .paper-tile-summary {
   font-size: 14px;
   line-height: 1.55;
@@ -333,6 +354,36 @@ a.paper-tile:hover { text-decoration: none; color: #333; }
   line-height: 1.5;
   color: #444;
   margin: 8px 0 0;
+}
+
+.paper-tile-authors a {
+  position: relative;
+  z-index: 1;
+  color: #1772d0;
+  text-decoration: none;
+}
+
+.paper-tile-authors a:hover {
+  text-decoration: underline;
+}
+
+.paper-equal-note {
+  font-size: 12.5px;
+  font-style: italic;
+  color: #777;
+  margin: 4px 0 0;
+}
+
+.paper-tile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 0;
+}
+
+.paper-tile-links a {
+  position: relative;
+  z-index: 1;
 }
 
 @media screen and (max-width: 700px) {
