@@ -594,3 +594,23 @@ a.paper-tile-title::after {
   .animate-on-scroll { opacity: 1; }
   .animate-on-scroll.is-visible { animation: none; }
 }
+.collab {
+  white-space: nowrap;
+}
+
+/* Logos sit on the baseline at the text's cap height (0.72em is Lato's, for browsers without the cap unit). */
+.collab-logo {
+  height: 0.72em;
+  height: 1cap;
+  width: auto;
+  vertical-align: baseline;
+  margin-right: 0.3em;
+}
+
+/* The Cal swash is the bottom 20% of the logo; let it hang below the baseline like a descender. */
+.collab-logo-cal {
+  height: 0.9em;
+  height: 1.25cap;
+  vertical-align: -0.18em;
+  vertical-align: -0.25cap;
+}
