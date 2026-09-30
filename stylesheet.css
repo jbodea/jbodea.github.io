@@ -594,6 +594,17 @@ a.paper-tile-title::after {
   .animate-on-scroll { opacity: 1; }
   .animate-on-scroll.is-visible { animation: none; }
 }
+.bio,
+.bio a {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.bio-links,
+.bio-links a {
+  font-size: 16px;
+}
+
 .collab {
   white-space: nowrap;
 }
@@ -605,6 +616,14 @@ a.paper-tile-title::after {
   width: auto;
   vertical-align: baseline;
   margin-right: 0.3em;
+}
+
+/* The Stanford S is narrow, so at cap height it reads smaller than the wide marks; let it overshoot above and below like a parenthesis. */
+.collab-logo-tall {
+  height: 0.94em;
+  height: 1.3cap;
+  vertical-align: -0.11em;
+  vertical-align: -0.15cap;
 }
 
 /* The Cal swash is the bottom 20% of the logo; let it hang below the baseline like a descender. */
