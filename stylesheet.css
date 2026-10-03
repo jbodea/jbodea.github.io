@@ -385,7 +385,7 @@ a.paper-tile-title::after {
 .paper-tile-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
   margin: 12px 0 0;
 }
 
@@ -407,6 +407,7 @@ a.paper-tile-title::after {
   margin-top: 12px;
 }
 
+/* Keycap buttons: a white key sitting on an offset, outlined base. */
 .tile-action-btn {
   display: inline-flex;
   align-items: center;
@@ -414,22 +415,25 @@ a.paper-tile-title::after {
   font-size: 12px;
   font-weight: 500;
   line-height: 1;
-  padding: 7px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 8px 14px;
+  border-radius: 5px;
+  border: 1px solid #0f172a;
   background: #ffffff;
-  color: rgba(0, 0, 0, 0.78);
+  color: #0f172a;
   text-decoration: none;
   cursor: pointer;
   font-family: inherit;
-  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  box-shadow: 2px 2px 0 0 #ffffff, 2px 2px 0 1px #0f172a;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
 }
 
-.tile-action-btn:hover {
-  border-color: rgba(0, 0, 0, 0.3);
+.tile-action-btn:hover,
+.tile-action-btn:focus-visible {
   color: #1772d0;
   background: #ffffff;
   text-decoration: none;
+  transform: translateY(2px);
+  box-shadow: 2px 8px 8px -5px rgba(15, 23, 42, 0.3);
 }
 
 .tile-action-btn i { font-size: 12px; }
@@ -532,7 +536,7 @@ a.paper-tile-title::after {
 .paper-page-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
   margin-bottom: 8px;
 }
 
@@ -914,4 +918,7 @@ body.home {
   .hero-text > *,
   .hero-photo { animation: none; }
   .hero-photo:hover img { transform: none; }
+  .tile-action-btn { transition: none; }
+  .tile-action-btn:hover,
+  .tile-action-btn:focus-visible { transform: none; }
 }
