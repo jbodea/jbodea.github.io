@@ -22,40 +22,36 @@
     <meta name="twitter:image" content="https://jbodea.github.io/images/jonathanBodeaProfile.jpg">
 
     <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;👨🏻‍💻&lt;/text&gt;&lt;/svg&gt;">
-    <link rel="stylesheet" type="text/css" href="/stylesheet.css?v=11">
+    <link rel="stylesheet" type="text/css" href="/stylesheet.css?v=12">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="/scripts/animations.js" defer></script>
 
   </head>
 
-  <body>
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr style="padding:0px">
-              <td style="padding:2.5%;width:63%;vertical-align:middle">
-                <p class="name" style="text-align: center;">
-                  Jonathan Bodea
-                </p>
-                <p class="bio">
-                  Hi! I'm Jonathan, a high school student. Most of my work has been on AI safety and reliability, with collaborators at <a class="collab" href="https://poloclub.github.io/"><img class="collab-logo" src="images/logos/gatech.svg" alt="">Georgia Tech's Polo Club</a>, <a class="collab" href="https://bair.berkeley.edu/"><img class="collab-logo collab-logo-cal" src="images/logos/berkeley.svg" alt="">UC Berkeley</a>, <a class="collab" href="https://www.stanford.edu/"><img class="collab-logo collab-logo-tall" src="images/logos/stanford.svg" alt="">Stanford University</a>, and the <a class="collab" href="https://www.aisi.gov.uk/"><img class="collab-logo" src="images/logos/aisi.svg" alt="">UK AI Security Institute</a>.
-                </p>
-                <p class="bio-links" style="text-align:center">
-                  <a href="mailto:jonathan.bodea@gmail.com">Email</a> &nbsp;/&nbsp;
-                  <a href="https://x.com/jonathanbodea?s=21">Twitter</a> &nbsp;/&nbsp;
-                  <a href="https://github.com/jbodea">Github</a> &nbsp;/&nbsp;
-                  <a href="https://scholar.google.com/citations?user=w58B-b4AAAAJ&hl=en&oi=ao">Google Scholar</a>
-                </p>
-              </td>
-              <td style="padding:2.5%;width:37%;max-width:37%">
-                <a href="images/jonathanBodeaProfile.jpg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/jonathanBodeaProfile.jpg" class="hoverZoomLink"></a>
-              </td>
-            </tr>
-          </tbody></table>
-        </td>
-      </tr>
-    </tbody></table>
+  <body class="home">
+    <main class="page">
+      <header class="hero">
+        <div class="hero-text">
+          <a class="hero-news" href="papers/unipo/">
+            <span class="hero-news-tag"><i class="fas fa-award"></i> New</span>
+            <span class="hero-news-text">UNIPO received a Best Short Paper Honorable Mention at IEEE VIS 2026</span>
+            <i class="fas fa-arrow-right hero-news-arrow"></i>
+          </a>
+          <h1 class="hero-name"><span class="hero-name-mark">Jonathan Bodea</span></h1>
+          <p class="bio">
+            Hi! I'm Jonathan, a high school student. Most of my work has been on AI safety and reliability, with collaborators at <a class="collab" href="https://poloclub.github.io/"><span class="collab-lead"><img class="collab-logo" src="images/logos/gatech.svg" alt="">Georgia</span> Tech's Polo Club</a>, <a class="collab" href="https://bair.berkeley.edu/"><span class="collab-lead"><img class="collab-logo collab-logo-cal" src="images/logos/berkeley.svg" alt="">UC</span> Berkeley</a>, <a class="collab" href="https://www.stanford.edu/"><span class="collab-lead"><img class="collab-logo collab-logo-tall" src="images/logos/stanford.svg" alt="">Stanford</span> University</a>, and the <a class="collab" href="https://www.aisi.gov.uk/"><span class="collab-lead"><img class="collab-logo" src="images/logos/aisi.svg" alt="">UK</span> AI Security Institute</a>.
+          </p>
+          <nav class="hero-links" aria-label="Contact and profiles">
+            <a class="hero-link hero-link-primary" href="mailto:jonathan.bodea@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+            <a class="hero-link" href="https://x.com/jonathanbodea?s=21"><i class="fab fa-x-twitter"></i> Twitter</a>
+            <a class="hero-link" href="https://github.com/jbodea"><i class="fab fa-github"></i> GitHub</a>
+            <a class="hero-link" href="https://scholar.google.com/citations?user=w58B-b4AAAAJ&hl=en&oi=ao"><i class="fab fa-google-scholar"></i> Google Scholar</a>
+          </nav>
+        </div>
+        <a class="hero-photo" href="images/jonathanBodeaProfile.jpg">
+          <img src="images/jonathanBodeaProfile.jpg" alt="Jonathan Bodea" width="800" height="708">
+        </a>
+      </header>
 
     <section class="publications-section">
       <h2>Publications</h2>
@@ -71,7 +67,7 @@
               <span class="paper-tile-highlight paper-tile-highlight-accepted"><i class="fas fa-check-circle"></i> IEEE VIS'26</span>
               <span class="paper-tile-highlight"><i class="fas fa-award"></i> Best Short Paper Honorable Mention</span>
             </div>
-            <a href="papers/unipo/" class="paper-tile-title">UNIPO: Unified Interactive Visual Explanation for RL Fine-Tuning Policy Optimization</a>
+            <a href="papers/unipo/" class="paper-tile-title">UNIPO: Unified Interactive Visual Explanation for RL <span class="nowrap">Fine-Tuning</span> Policy Optimization</a>
             <p class="paper-tile-summary">Reinforcement learning has emerged as a dominant technique for fine-tuning the behavior of large language models, with policy optimization (PO) algorithms such as GRPO, DAPO, and Dr. GRPO emerging in rapid succession to advance state-of-the-art reasoning and alignment performance. However, the modular differences between these algorithms, including targeted improvements to clipping, advantage estimation, and reward aggregation, are introduced across separate papers with inconsistent notation, making them difficult to compare and intimidating to the non-expert community. We present UNIPO, the first interactive visualization tool that exposes the token-level training dynamics of RL fine-tuning algorithms through a unified design. UNIPO connects three complementary views &mdash; a high-level training overview, a step-level prompt and response inspector, and a side-by-side algorithm comparison &mdash; allowing learners to observe how individual design decisions propagate through training. Through two usage scenarios, we demonstrate how UNIPO supports both classroom instruction for non-experts and algorithm selection for AI practitioners.</p>
             <p class="paper-tile-authors">Aeree Cho, Alexander D. Greenhalgh, <strong>Jonathan Bodea</strong>, Anthony Peng, Duen Horng (Polo) Chau</p>
             <div class="paper-tile-links">
@@ -106,46 +102,11 @@
       </div>
     </section>
 
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-<!--         <h2>News</h2>
-
-            <ul>
-                <li><b>July 2025</b>: I presented LMRL-Gym at ICML 2025.
-                <li><b>January 2025</b>: I became a Cooperative AI PHD Fellow.
-                <li><b>July 2024</b>: Moral Foundations for LLMs was presented at EMNLP 2024.
-                <li><b>September 2022</b>: I became head GSI for CS285: Deep Reinforcement Learning at UC Berkeley.
-                <li><b>September 2021</b>: I began my PhD at UC Berkeley!
-                <li><b>January 2021</b>: I led a program sponsored by Helping Hand Relief & Development to teach refugee students in Jordan how to code in Java. Check out course content <a href="https://hhrd-cs.github.io/">here</a>.
-                <li><b>December 2020</b>: I gave a TEDxMIT Talk on the importance of interfaith dialouge and its connection to my research. Check it out <a href="https://www.youtube.com/watch?v=31L9eYsfp6E&ab_channel=TEDxTalks">here</a>.
-                <li><b>September 2020</b>: I began my Masters at MIT in EECS!
-
-            </ul> -->
-        <!-- <h2>Teaching</h2>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
-        <tr onmouseout="font_stop()" onmouseover="font_start()">
-          <td style="padding:20px;width:25%;vertical-align:middle">
-            <img src="images/cs188.png" alt="planning" style="border-style: none" width="200">
-          </td>
-          <td style="padding:20px;width:75%;vertical-align:middle">
-             <papertitle>Graduate Student Instructor for CS188: Artificial Intelligence </papertitle>
-            <br>
-            Spring 2019
-            <br>
-            <a href="https://inst.eecs.berkeley.edu/~cs188/sp24/", target="_blank">Course Website</a> /
-            <p></p>
-            <p></p>
-          </td>
-        </tr>
-          </td>
-        </tr>
-      </tbody></table> -->
-      </td>
-    </tr>
-  </table>
+      <footer class="site-footer">
+        <span>&copy; 2026 Jonathan Bodea</span>
+        <span>Last updated October 2026</span>
+      </footer>
+    </main>
 </body>
 
 </html>
