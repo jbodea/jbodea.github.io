@@ -521,6 +521,17 @@ a.paper-tile-title::after {
   margin: 0 0 6px;
 }
 
+/* Keep author links in the line's own font and size (the global `a` rule sets 14px Lato). */
+.paper-page-authors a {
+  font: inherit;
+  color: #1772d0;
+}
+
+.paper-page-authors a:hover {
+  color: #1772d0;
+  text-decoration: underline;
+}
+
 .paper-tile-authors strong,
 .paper-page-authors strong {
   font-weight: 900;
