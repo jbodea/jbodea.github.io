@@ -1,1 +1,5 @@
-This is the source code to Jon Barron's public academic website: https://jonbarron.info/. Feel free to clone this code for your own personal use.
+# Jonathan Bodea's Personal Website
+
+Source code for [jbodea.github.io](https://jbodea.github.io), Jonathan Bodea's personal academic website.
+
+Built with a template from [Jon Barron](https://jonbarron.info/).
