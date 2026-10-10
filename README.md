@@ -9,4 +9,4 @@ Personal website of Jonathan Bodea, live at https://jbodea.github.io. It is a st
 - `data/turningTables.pdf`: Turning the Tables paper PDF
 - `sitemap.xml`, `robots.txt`, `CNAME`: SEO and custom domain files
 
-Built from [Jon Barron's website template](https://github.com/jonbarron/website).
+Built from [Jon Barron's website template](https://jonbarron.info/).
