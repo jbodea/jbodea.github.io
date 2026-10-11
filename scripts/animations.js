@@ -22,11 +22,17 @@
 })();
 
 // Hover-driven autoscroll for card images wider than their container.
+// Touch screens can't hover, so there the image pans across once when it scrolls into view.
 (function () {
+  var panOnView = window.matchMedia('(hover: none)').matches &&
+    !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   function smoothstep(t) { return t * t * (3 - 2 * t); }
 
   function setupAutoScroll(container) {
     var raf = null;
+    var pause = null;
+    var onDone = null;
     var startTime = 0;
     var startScroll = 0;
     var targetScroll = 0;
@@ -37,12 +43,15 @@
       var t = Math.min((now - startTime) / duration, 1);
       container.scrollLeft = startScroll + (targetScroll - startScroll) * smoothstep(t);
       if (t < 1) raf = requestAnimationFrame(step);
+      else if (onDone) onDone();
     }
 
-    function animateTo(target) {
+    function animateTo(target, done) {
       var maxScroll = container.scrollWidth - container.clientWidth;
       if (maxScroll <= 0) return;
       cancelAnimationFrame(raf);
+      clearTimeout(pause);
+      onDone = done || null;
       startTime = 0;
       startScroll = container.scrollLeft;
       targetScroll = Math.max(0, Math.min(target, maxScroll));
@@ -57,6 +66,29 @@
     container.addEventListener('mouseleave', function () {
       animateTo(0);
     });
+
+    if (!panOnView) return;
+
+    function panAcross() {
+      animateTo(container.scrollWidth - container.clientWidth, function () {
+        pause = setTimeout(function () { animateTo(0); }, 1200);
+      });
+    }
+
+    var seen = new IntersectionObserver(function (entries) {
+      if (!entries[0].isIntersecting) return;
+      seen.disconnect();
+      var img = container.querySelector('img');
+      if (img && !img.complete) img.addEventListener('load', panAcross, { once: true });
+      else panAcross();
+    }, { threshold: 0.6 });
+    seen.observe(container);
+
+    // Hand control back as soon as the visitor touches the image to swipe it themselves.
+    container.addEventListener('touchstart', function () {
+      cancelAnimationFrame(raf);
+      clearTimeout(pause);
+    }, { passive: true });
   }
 
   function init() {
@@ -69,11 +101,6 @@
     init();
   }
 })();
-
-function toggleBibtex(id) {
-  var el = document.getElementById('bibtex-' + id);
-  if (el) el.classList.toggle('is-open');
-}
 
 function copyBibtex(id) {
   var pre = document.getElementById('bibtex-text-' + id);

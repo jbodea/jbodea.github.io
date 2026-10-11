@@ -86,21 +86,11 @@ a {
 
 a:focus,
 a:hover {
-  color: #f09228;
+  color: #135fae;
   text-decoration: none;
 }
 
-body,
-td,
-th,
-tr,
-p,
-a {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
-}
-
-strong {
+body {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 14px;
 }
@@ -112,91 +102,14 @@ h2 {
   font-size: 22px;
 }
 
-.papertitle {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.name {
-  padding-top: 20px;
-  margin: 0;
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 32px;
-}
-
-.one {
-  width: 160px;
-  height: 160px;
-  position: relative;
-}
-
-.two {
-  width: 160px;
-  height: 160px;
-  position: absolute;
-  transition: opacity .2s ease-in-out;
-  -moz-transition: opacity .2s ease-in-out;
-  -webkit-transition: opacity .2s ease-in-out;
-}
-
-.fade {
-  transition: opacity .2s ease-in-out;
-  -moz-transition: opacity .2s ease-in-out;
-  -webkit-transition: opacity .2s ease-in-out;
-}
-
-span.highlight {
-  background-color: #ffffd0;
-}
-
-.colored-box {
-    color: black;
-    padding: 20px;
-    display: inline-block;
-    border-radius: 10px;
-}
-
-.timeline {
-  list-style: none;
-  padding: 0 0 0 28px;
-  margin: 12px 0 0 0;
-  border-left: 2px solid #d0d7de;
-  position: relative;
-}
-
-.timeline li {
-  position: relative;
-  padding: 0 0 20px 0;
-}
-
-.timeline li:last-child {
-  padding-bottom: 0;
-}
-
-.timeline li::before {
-  content: '';
-  position: absolute;
-  left: -34px;
-  top: 4px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 2px solid #58a6ff;
-  background: #fff;
-}
-
-.timeline .date {
-  font-weight: 700;
-  font-size: 14px;
-  color: #333;
-  text-transform: lowercase;
-}
-
-.timeline .desc {
-  font-size: 14px;
-  color: #444;
-  margin-top: 2px;
+/* Inline Font Awesome icons: 1em tall, width from each icon's viewBox. */
+.icon {
+  display: inline-block;
+  height: 1em;
+  width: auto;
+  overflow: visible;
+  vertical-align: -0.125em;
+  fill: currentColor;
 }
 
 /* ── Publications section (ahalgh-style) ────────────────── */
@@ -236,8 +149,6 @@ span.highlight {
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-a.paper-tile { cursor: pointer; }
-a.paper-tile:hover { text-decoration: none; color: #333; }
 .paper-tile:hover {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06), 0 8px 20px rgba(0, 0, 0, 0.06);
 }
@@ -311,7 +222,7 @@ a.paper-tile:hover { text-decoration: none; color: #333; }
   white-space: nowrap;
 }
 
-.paper-tile-highlight i {
+.paper-tile-highlight .icon {
   font-size: 12px;
   color: #8a6100;
 }
@@ -322,7 +233,7 @@ a.paper-tile:hover { text-decoration: none; color: #333; }
   color: #0f4c8a;
 }
 
-.paper-tile-highlight-accepted i {
+.paper-tile-highlight-accepted .icon {
   color: #1772d0;
 }
 
@@ -400,13 +311,6 @@ a.paper-tile-title::after {
 }
 
 /* ── Shared tile actions ─────────────────────────────────── */
-.tile-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 12px;
-}
-
 /* Keycap buttons: a white key sitting on an offset, outlined base. */
 .tile-action-btn {
   display: inline-flex;
@@ -436,30 +340,7 @@ a.paper-tile-title::after {
   box-shadow: 2px 8px 8px -5px rgba(15, 23, 42, 0.3);
 }
 
-.tile-action-btn i { font-size: 12px; }
-
-.tile-bibtex-block {
-  display: none;
-  position: relative;
-  margin-top: 10px;
-  background: #f6f8fa;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-}
-
-.tile-bibtex-block.is-open { display: block; }
-
-.tile-bibtex-block pre {
-  margin: 0;
-  padding: 12px 14px;
-  padding-right: 70px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 12px;
-  line-height: 1.45;
-  overflow-x: auto;
-  white-space: pre;
-  color: #333;
-}
+.tile-action-btn .icon { font-size: 12px; }
 
 .tile-copy-btn {
   position: absolute;
@@ -519,12 +400,6 @@ a.paper-tile-title::after {
   line-height: 1.55;
   color: #333;
   margin: 0 0 6px;
-}
-
-/* Keep author links in the line's own font and size (the global `a` rule sets 14px Lato). */
-.paper-page-authors a {
-  font: inherit;
-  color: #1772d0;
 }
 
 .paper-page-authors a:hover {
@@ -617,15 +492,16 @@ a.paper-tile-title::after {
   .animate-on-scroll { opacity: 1; }
   .animate-on-scroll.is-visible { animation: none; }
 }
-.bio,
-.bio a {
+.bio {
   font-size: 18px;
   line-height: 1.6;
 }
 
-.bio-links,
-.bio-links a {
-  font-size: 16px;
+/* Links inside running text underline on hover. */
+.bio a:hover,
+.paper-page-abstract a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .collab-lead {
@@ -804,7 +680,7 @@ body.home {
   transition: translate 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
 }
 
-.hero-link i {
+.hero-link .icon {
   font-size: 15px;
   color: #64748b;
   transition: color 0.15s ease;
@@ -818,11 +694,11 @@ body.home {
   box-shadow: 0 6px 16px rgba(23, 114, 208, 0.14);
 }
 
-.hero-link:hover i,
-.hero-link:focus-visible i { color: #1772d0; }
+.hero-link:hover .icon,
+.hero-link:focus-visible .icon { color: #1772d0; }
 
 .hero-link-primary,
-.hero-link-primary i { color: #ffffff; }
+.hero-link-primary .icon { color: #ffffff; }
 
 .hero-link-primary {
   background: #1772d0;
@@ -837,8 +713,8 @@ body.home {
   box-shadow: 0 6px 16px rgba(23, 114, 208, 0.30);
 }
 
-.hero-link-primary:hover i,
-.hero-link-primary:focus-visible i { color: #ffffff; }
+.hero-link-primary:hover .icon,
+.hero-link-primary:focus-visible .icon { color: #ffffff; }
 
 .hero-photo {
   display: block;
@@ -920,6 +796,11 @@ body.home {
 
 .site-footer a:hover { color: #1772d0; }
 
+.not-found {
+  padding: 120px 0 96px;
+  animation: fadeInUp 0.6s ease both;
+}
+
 @media screen and (max-width: 760px) {
   .hero {
     grid-template-columns: 1fr;
@@ -936,7 +817,8 @@ body.home {
 
 @media (prefers-reduced-motion: reduce) {
   .hero-text > *,
-  .hero-photo { animation: none; }
+  .hero-photo,
+  .not-found { animation: none; }
   .hero-photo:hover img { transform: none; }
   .tile-action-btn { transition: none; }
   .tile-action-btn:hover,
