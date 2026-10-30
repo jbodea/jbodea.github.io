@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: /papers/files/
 Allow: /
 
 Sitemap: https://jbodea.github.io/sitemap.xml
